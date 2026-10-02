@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Santhosh Sivan I. — Territory Sales Manager, Medical Devices</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F3EC;
+    --surface: #FFFFFF;
+    --ink: #17242B;
+    --muted: #5B6A70;
+    --teal: #2E6F6A;
+    --teal-deep: #1E4D49;
+    --amber: #BD7F34;
+    --line: #DAD4C6;
+    --radius: 3px;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0F1B20;
+      --surface: #15252B;
+      --ink: #EAE6DC;
+      --muted: #96A3A5;
+      --teal: #5FB9B0;
+      --teal-deep: #8FD4CB;
+      --amber: #E0A354;
+      --line: #27383D;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0F1B20;
+    --surface: #15252B;
+    --ink: #EAE6DC;
+    --muted: #96A3A5;
+    --teal: #5FB9B0;
+    --teal-deep: #8FD4CB;
+    --amber: #E0A354;
+    --line: #27383D;
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); -webkit-text-size-adjust: 100%; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", -apple-system, Segoe UI, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+  code, .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 64px 0 40px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero .locus {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--teal);
+    letter-spacing: 0.02em;
+    margin: 0 0 18px;
+  }
+  .hero h1 {
+    font-size: clamp(2.1rem, 5vw, 3.1rem);
+    line-height: 1.08;
+    margin: 0 0 10px;
+    font-weight: 700;
+    max-width: 14ch;
+  }
+  .hero .role {
+    font-size: 1.15rem;
+    color: var(--muted);
+    margin: 0 0 28px;
+    max-width: 42ch;
+  }
+  .trace { width: 100%; height: 56px; display: block; margin-bottom: 6px; }
+  .trace path {
+    fill: none;
+    stroke: var(--amber);
+    stroke-width: 2;
+    stroke-linecap: round;
+  }
+
+  /* ---------- Sections ---------- */
+  section { padding: 44px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+  h2 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--teal);
+    margin: 0 0 20px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+  .lede { font-size: 1.05rem; max-width: 60ch; }
+
+  /* ---------- Timeline (experience) ---------- */
+  .role-entry { position: relative; padding-left: 26px; margin-bottom: 36px; }
+  .role-entry:last-child { margin-bottom: 0; }
+  .role-entry::before {
+    content: "";
+    position: absolute;
+    left: 4px; top: 6px; bottom: -36px;
+    width: 1px;
+    background: var(--line);
+  }
+  .role-entry:last-child::before { display: none; }
+  .role-entry::after {
+    content: "";
+    position: absolute;
+    left: 0; top: 4px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--teal);
+  }
+  .role-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; margin-bottom: 4px; }
+  .role-title { font-weight: 600; font-size: 1.05rem; }
+  .role-dates { font-family: "IBM Plex Mono", monospace; font-size: 0.82rem; color: var(--muted); white-space: nowrap; }
+  .role-org { color: var(--teal); font-size: 0.95rem; margin-bottom: 10px; }
+  .role-devices { font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; color: var(--muted); margin-bottom: 10px; line-height: 1.6; }
+  ul.points { margin: 0; padding-left: 18px; }
+  ul.points li { margin-bottom: 6px; }
+
+  /* ---------- Spec grid (technical expertise) ---------- */
+  .spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .spec-block h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--muted);
+    margin: 0 0 10px;
+    text-transform: none;
+  }
+  .spec-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .spec-tags span {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    padding: 5px 10px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    color: var(--ink);
+    background: var(--surface);
+  }
+
+  /* ---------- Competency columns ---------- */
+  .comp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .comp-grid h3 { font-size: 0.95rem; margin: 0 0 8px; }
+  .comp-grid p { margin: 0; font-size: 0.92rem; color: var(--muted); }
+
+  /* ---------- Education / footer ---------- */
+  .edu-row { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
+  .edu-row:last-child { margin-bottom: 0; }
+  .edu-title { font-weight: 600; }
+  .edu-meta { color: var(--muted); font-size: 0.92rem; }
+
+  footer {
+    padding: 40px 0 calc(48px + env(safe-area-inset-bottom, 0px));
+  }
+  .contact-grid { display: flex; flex-wrap: wrap; gap: 20px 32px; margin-bottom: 18px; }
+  .contact-grid a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--teal); }
+  .contact-grid a:hover { color: var(--teal); }
+  .langs { font-family: "IBM Plex Mono", monospace; font-size: 0.82rem; color: var(--muted); }
+
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+
+  @media (max-width: 640px) {
+    .spec-grid, .comp-grid { grid-template-columns: 1fr; }
+    .hero { padding-top: 48px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <section class="hero">
+    <svg class="trace" viewBox="0 0 700 56" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,28 L140,28 L160,10 L180,46 L200,28 L260,28 L280,8 L292,48 L304,28 L700,28" />
+    </svg>
+    <p class="locus mono">PUDUCHERRY, INDIA</p>
+    <h1>Santhosh Sivan I.</h1>
+    <p class="role">Territory Sales Manager — Medical Devices &amp; Clinical Application Engineering</p>
+  </section>
+
+  <section>
+    <h2>About</h2>
+    <p class="lede">Five-plus years selling and supporting medical devices across the biomedical and aesthetic laser industry — from surgical CO₂ and Nd:YAG lasers to HIFU and microneedling RF systems. Equal parts technical and commercial: trains clinicians on device operation and safety, and manages government e-procurement end to end, from tender documentation through contract renewal. Based in Puducherry, working across Tamil Nadu and Kerala, with an interest in moving into robotic-assisted surgery.</p>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="role-entry">
+      <div class="role-head">
+        <span class="role-title">Territory Sales Manager</span>
+        <span class="role-dates">OCT 2024 — PRESENT</span>
+      </div>
+      <div class="role-org">Sharmikkha Medi System</div>
+      <div class="role-devices">Biomedical equipment &amp; medical consumables — urology, cardiology</div>
+      <ul class="points">
+        <li>Owns end-to-end GeM Portal operations — bid participation, order processing, contract management — and CPP Portal tender submissions.</li>
+        <li>Tracks new central and state government tenders; prepares technical and commercial bid documents.</li>
+        <li>Delivers clinical and technical device support while consistently meeting revenue targets.</li>
+        <li>Produces sales forecasts and MIS reporting for management review.</li>
+      </ul>
+    </div>
+
+    <div class="role-entry">
+      <div class="role-head">
+        <span class="role-title">Sales and Application Specialist</span>
+        <span class="role-dates">SEP 2023 — SEP 2024</span>
+      </div>
+      <div class="role-org">Dermatech Solution Pvt Ltd</div>
+      <div class="role-devices">Vivace MNRF · DubloGold HIFU · IRIS Nd:YAG · laser hair removal — Tamil Nadu, Puducherry, Kerala</div>
+      <ul class="points">
+        <li>Reached 85% of annual sales target across the assigned region.</li>
+        <li>Trained 50+ healthcare professionals on device operation, protocols, and laser safety.</li>
+        <li>Supported clinical teams hands-on during initial patient procedures.</li>
+      </ul>
+    </div>
+
+    <div class="role-entry">
+      <div class="role-head">
+        <span class="role-title">Sales and Application Engineer</span>
+        <span class="role-dates">JAN 2021 — AUG 2023</span>
+      </div>
+      <div class="role-org">Aarvam Medical Systems</div>
+      <div class="role-devices">Surgical CO₂ laser · aesthetic laser · surgical &amp; therapeutic diode laser</div>
+      <ul class="points">
+        <li>Sold and demonstrated laser systems to dermatologists, plastic surgeons, and aesthetic centers.</li>
+        <li>Built new territory accounts and consistently met sales targets.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Technical expertise</h2>
+    <div class="spec-grid">
+      <div class="spec-block">
+        <h3>Laser systems</h3>
+        <div class="spec-tags">
+          <span>Diode</span><span>CO₂</span><span>Nd:YAG</span><span>Q-Switched Nd:YAG</span><span>Fractional</span><span>IPL</span>
+        </div>
+      </div>
+      <div class="spec-block">
+        <h3>Clinical applications</h3>
+        <div class="spec-tags">
+          <span>Hair removal</span><span>Skin rejuvenation</span><span>Pigmentation</span><span>Tattoo removal</span><span>Acne scars</span><span>Vascular lesions</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Core competencies</h2>
+    <div class="comp-grid">
+      <div>
+        <h3>Sales &amp; business development</h3>
+        <p>Territory management, forecasting, market analysis, contract negotiation, key accounts.</p>
+      </div>
+      <div>
+        <h3>Government &amp; tender operations</h3>
+        <p>GeM Portal, CPP Portal, bid documentation, procurement compliance, MIS reporting.</p>
+      </div>
+      <div>
+        <h3>Clinical &amp; technical support</h3>
+        <p>Application support, troubleshooting, product demos, customer training, CRM.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education &amp; training</h2>
+    <div class="edu-row">
+      <span class="edu-title">B.Tech, Biomedical Engineering</span>
+      <span class="edu-meta mono">2016 — 2020 · CGPA 7.5/10</span>
+    </div>
+    <p class="edu-meta" style="margin-top:-8px">Rajiv Gandhi College of Engineering and Technology, Puducherry</p>
+    <div class="edu-row" style="margin-top:18px">
+      <span class="edu-title">Implant Training</span>
+      <span class="edu-meta">Mahatma Gandhi Medical College &amp; Research Institute, Puducherry</span>
+    </div>
+    <div class="edu-row">
+      <span class="edu-title">Workshop — Critical Care Equipment &amp; Image Processing</span>
+    </div>
+  </section>
+
+  <footer>
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <a href="mailto:santhoshbiomedical@gmail.com">santhoshbiomedical@gmail.com</a>
+      <a href="tel:+917339652296">+91 73396 52296</a>
+      <span class="muted" style="color:var(--muted)">Puducherry, India</span>
+    </div>
+    <p class="langs">LANGUAGES — ENGLISH · TAMIL · FRENCH</p>
+  </footer>
+
+</div>
+</body>
+</html>
